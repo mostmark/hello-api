@@ -4,5 +4,7 @@ Simple REST api that echoes out a greeting message and the current timestamp. Yo
 
 The api is accessable on the /hello endpoint. The service has a simple web ui that calls this enpoint and render the response.
 
+![Web UI](images/webui.png)
+
 
 
