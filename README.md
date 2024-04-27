@@ -1,4 +1,4 @@
-# HelloAPI
+# Hello API
 
 Simple REST api that echoes out a greeting message and the current timestamp. You can adjust the greeting message by adding an environment variable GREETING_MESSAGE (defaults to "there").
 
