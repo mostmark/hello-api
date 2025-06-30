@@ -1,5 +1,4 @@
 package com.test;
-
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 
 import io.quarkus.qute.Template;
@@ -16,13 +15,18 @@ public class LandingPage {
     @Inject
     Template index;
 
-    @ConfigProperty(name = "COLOR", defaultValue = "blue") 
+    @ConfigProperty(name = "COLOR", defaultValue = "blue")
     String color;
+
+    @ConfigProperty(name = "API_URL", defaultValue = "./hello")
+    String url;
 
     @GET
     @Produces(MediaType.TEXT_HTML)
-    public TemplateInstance getLandingPage(){
-        return index.data("color", color);
+    public TemplateInstance getLandingPage() {
+        return index.data("color", color).data("api_url", url);
     }
-    
+
+
+
 }
