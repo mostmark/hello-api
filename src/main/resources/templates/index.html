@@ -115,7 +115,7 @@
         <div class="left-column">
             <p id="instruction" class="lead"> The message from the API call will be displayed below:</p>
             <p id="message" class="lead"></p>
-            <p><a href="{api_url}"/>api endpoint</p>
+            <p><a href="./hello"/>api endpoint</p>
         </div>
 
     </div>
@@ -130,7 +130,7 @@
         });
 
         async function getMessage() {
-            const response = await fetch('{api_url}');
+            const response = await fetch('./hello');
             const themessage = await response.text();
             document.getElementById('message').innerHTML = themessage;
         }

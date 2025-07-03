@@ -18,13 +18,14 @@ public class LandingPage {
     @ConfigProperty(name = "COLOR", defaultValue = "blue")
     String color;
 
-    @ConfigProperty(name = "API_URL", defaultValue = "./hello")
-    String url;
+//    @ConfigProperty(name = "API_URL", defaultValue = "./hello")
+//    String url;
 
     @GET
     @Produces(MediaType.TEXT_HTML)
     public TemplateInstance getLandingPage() {
-        return index.data("color", color).data("api_url", url);
+        return index.data("color", color);
+        //return index.data("color", color).data("api_url", url);
     }
 
 
