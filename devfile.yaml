@@ -4,7 +4,8 @@ metadata:
 components:
   - name: tools
     container:
-      image: quay.io/devfile/universal-developer-image:latest
+      # image: quay.io/devfile/universal-developer-image:latest
+      image: quay.io/mostmark/java-tools:latest
       volumeMounts:
         - name: maven-cache
           path: /home/user/.m2
