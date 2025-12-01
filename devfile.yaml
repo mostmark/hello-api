@@ -1,0 +1,43 @@
+schemaVersion: 2.3.0
+metadata:
+  name: devfile
+components:
+  - name: tools
+    container:
+      image: quay.io/devfile/universal-developer-image:latest
+      volumeMounts:
+        - name: maven-cache
+          path: /home/user/.m2
+      mountSources: true
+      cpuLimit: 2
+      memoryLimit: 2Gi
+  - name: maven-cache
+    volume:
+      size: 2Gi
+
+projects:
+  - name: hello-api
+    git:
+      remotes:
+        origin: https://github.com/mostmark/hello-api
+
+commands:
+  - id: build-java
+    exec:
+      label: Build Java Project
+      component: tools
+      commandLine: mvn clean install
+      workingDir: /projects/hello-api
+      group:
+        kind: build
+        isDefault: true
+
+  - id: run-quarkus-dev
+    exec:
+      label: Run Quarkus in Dev Mode
+      component: tools
+      commandLine: mvn quarkus:dev
+      workingDir: /projects/hello-api
+      group:
+        kind: run
+        isDefault: true
