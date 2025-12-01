@@ -9,8 +9,8 @@ components:
         - name: maven-cache
           path: /home/user/.m2
       mountSources: true
-      cpuLimit: 2
-      memoryLimit: 2000m
+      cpuLimit: 2000m
+      memoryLimit: 2048Mi
   - name: maven-cache
     volume:
       size: 2Gi
