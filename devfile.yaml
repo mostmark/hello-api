@@ -5,7 +5,8 @@ components:
   - name: tools
     container:
       # image: quay.io/devfile/universal-developer-image:latest
-      image: quay.io/mostmark/java-tools:latest
+      # image: quay.io/mostmark/java-tools:latest
+      image: registry.redhat.io/devspaces/udi-rhel9:latest
       volumeMounts:
         - name: maven-cache
           path: /home/user/.m2
